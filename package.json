@@ -1,15 +1,16 @@
 {
-  "name": "sandbox_alfy",
+  "name": "alfred-bonk-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "My sample alfred workflow",
+  "author": {
+    "name": "bonk",
+    "email": "npm@bombom.sakura.ne.jp"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
   "dependencies": {
-    "alfy": "^0.9.1"
+    "alfy": "*"
   }
 }
