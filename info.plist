@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>bonk-test</string>
+	<string>bonk test</string>
 	<key>bundleid</key>
-	<string>com.bonk321.bonk-test</string>
+	<string>com.bonk321.bonk test</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -57,7 +57,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>bonk-test</string>
+				<string>bonk test</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
