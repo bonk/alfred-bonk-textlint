@@ -11,7 +11,7 @@
        "periodMark": "。",
        "allowPeriodMarks": ['}','笑'],
        "allowEmojiAtEnd": true,
-       "forceAppendPeriod": false
+       "forceAppendPeriod": true
     },
     "ja-no-redundant-expression": true,
     "ja-no-weak-phrase": true,

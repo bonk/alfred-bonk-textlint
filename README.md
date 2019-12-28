@@ -20,3 +20,13 @@ In Alfred, type `bonk-test`, <kbd>Enter</kbd>, and your query.
 ## License
 
 MIT © [kawahara](http://bonk321.com)
+
+次のような表現を弱い表現として認識しています。
+
+基本,的、には、辞書ベースにすぎないので、特殊なアルゴリズムがあるわけではないです
+jquery hoge is me。
+jquery hoge is me。
+
+  hoge
+たろう
+げげお。
