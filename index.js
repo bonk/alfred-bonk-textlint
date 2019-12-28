@@ -1,4 +1,4 @@
-import alfy from "alfy";
+const alfy = require('alfy');
 
 (async () => {
     const data = await alfy.fetch('https://jsonplaceholder.typicode.com/posts');
