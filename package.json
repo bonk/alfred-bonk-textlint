@@ -1,6 +1,6 @@
 {
   "name": "alfred-bonk-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "My sample alfred workflow",
   "author": {
     "name": "bonk",
@@ -15,4 +15,3 @@
     "alfy": "^0.9.1"
   }
 }
-
