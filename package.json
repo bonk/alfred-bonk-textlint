@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "alfred-link": "^0.3.1",
-    "alfy": "*"
+    "alfy": "^0.9.1"
   }
 }
