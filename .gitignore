@@ -110,3 +110,4 @@ dist
 _build
 build
 /yarn.lock
+.idea
