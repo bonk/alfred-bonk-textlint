@@ -2,27 +2,113 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>name</key>
+	<string>bonk-test</string>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.bonk321.bonk-test</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
-	<dict/>
-	<key>createdby</key>
-	<string></string>
-	<key>description</key>
-	<string></string>
+	<dict>
+		<key>DB507C52-B9D2-486B-8C1F-26A613CF9D57</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D206330-D69C-4DED-B34B-5C03C5FA5BB6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>disabled</key>
 	<false/>
-	<key>name</key>
-	<string>bonk textlint</string>
 	<key>objects</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>4D206330-D69C-4DED-B34B-5C03C5FA5BB6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>bonk-test</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>index.js</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>My sensational module</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DB507C52-B9D2-486B-8C1F-26A613CF9D57</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
-	<dict/>
-	<key>webaddress</key>
-	<string></string>
+	<dict>
+		<key>4D206330-D69C-4DED-B34B-5C03C5FA5BB6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>150</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>DB507C52-B9D2-486B-8C1F-26A613CF9D57</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
 </dict>
 </plist>

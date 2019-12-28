@@ -1,17 +1,37 @@
 {
   "name": "alfred-bonk-test",
-  "version": "0.0.4",
-  "description": "My sample alfred workflow",
+  "version": "0.0.5",
+  "description": "My sensational module",
+  "license": "MIT",
+  "repository": "bonk/alfred-bonk-test",
   "author": {
     "name": "bonk",
     "email": "npm@bombom.sakura.ne.jp"
   },
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
+    "test": "xo && ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
   },
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "alfy"
+  ],
   "dependencies": {
-    "alfred-link": "^0.3.1",
-    "alfy": "^0.9.1"
+    "alfy": "^0.6.0"
+  },
+  "devDependencies": {
+    "alfy-test": "^0.3.0",
+    "ava": "^0.18.0",
+    "xo": "^0.17.0"
   }
 }
