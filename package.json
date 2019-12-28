@@ -11,6 +11,7 @@
     "preuninstall": "alfy-cleanup"
   },
   "dependencies": {
+    "alfred-link": "^0.3.1",
     "alfy": "*"
   }
 }
