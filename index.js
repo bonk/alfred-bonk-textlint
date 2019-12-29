@@ -1,8 +1,6 @@
 'use strict';
 const alfy = require('alfy');
-
 const TextFixEngine = require("textlint").TextFixEngine;
-const path = require("path");
 
 async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World") {
     const options = {
@@ -25,11 +23,13 @@ async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋
 }
 
 fixText(alfy.input).then(function (fixedText) {
+    console.log('fixText start');
     alfy.output([
         {
             title: fixedText,
             subtitle: alfy.input
         }
     ]);
+    console.log('fixText end');
 });
 
