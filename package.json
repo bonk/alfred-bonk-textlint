@@ -12,7 +12,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "hoge": "textlint --help",
+    "release": "npm version patch && npm publish ./",
     "test": "xo && ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
