@@ -1,6 +1,6 @@
 {
   "name": "alfred-bonk-textlint",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Workflow to fix using textlink",
   "license": "MIT",
   "repository": "bonk/alfred-bonk-textlint",
