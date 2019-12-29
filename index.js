@@ -11,14 +11,16 @@ alfy.meta = {
     bundleId: getEnv('workflow_bundleid')
 };
 
-const debug = function () {
-    if (alfy.meta.name) {
-        return () => {
-        }
-    }
-    return console.log
-};
+const debug = (alfy.meta.name) ? () => {} : console.log;
 
+// const debug = function () {
+//     if (alfy.meta.name) {
+//         return () => {
+//         }
+//     }
+//     return console.log
+// };
+//
 async function fixText(alfy_input) {
     return alfy_input
     // if (!alfy_input) {
@@ -44,24 +46,24 @@ async function fixText(alfy_input) {
 
 }
 
-const fixedText = await fixText(alfy.input)
-debug('fixText start');
-alfy.output([
-    {
-        title: fixedText,
-        // subtitle: alfy.input
-    }
-]);
-debug('fixText end');
+// const fixedText = await fixText(alfy.input)
+// debug('fixText start');
+// alfy.output([
+//     {
+//         title: fixedText,
+//         // subtitle: alfy.input
+//     }
+// ]);
+// debug('fixText end');
 
-// fixText(alfy.input).then(function (fixedText) {
-//     debug('fixText start');
-//     alfy.output([
-//         {
-//             title: fixedText,
-//             subtitle: alfy.input
-//         }
-//     ]);
-//     debug('fixText end');
-// });
+fixText(alfy.input).then(function (fixedText) {
+    debug('fixText start');
+    alfy.output([
+        {
+            title: fixedText,
+            subtitle: alfy.input
+        }
+    ]);
+    debug('fixText end');
+});
 
