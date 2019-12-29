@@ -2,8 +2,25 @@
 const alfy = require('alfy');
 const TextFixEngine = require("textlint").TextFixEngine;
 
+const getEnv = key => process.env[`alfred_${key}`];
+
+alfy.meta = {
+    name: getEnv('workflow_name'),
+    version: getEnv('workflow_version'),
+    uid: getEnv('workflow_uid'),
+    bundleId: getEnv('workflow_bundleid')
+};
+
+const debug = function () {
+    if (!alfy.meta.name) {
+        return () => {
+        }
+    }
+    return console.log
+};
+
 async function fixText(alfy_input) {
-    return "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
+    return alfy_input
     // if (!alfy_input) {
     //     alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
     // }
@@ -13,37 +30,38 @@ async function fixText(alfy_input) {
     //     formatterName: "json"
     // };
     // const engine2 = new TextFixEngine(options);
-    // console.log('sleep start');
+    // debug('sleep start');
     // const stringPromise = await engine2.executeOnText(alfy_input, ".txt").then(function (results) {
-    //     console.log('alfy_input:   ', alfy_input);
-    //     console.log('results: ', JSON.stringify(results));
+    //     debug('alfy_input:   ', alfy_input);
+    //     debug('results: ', JSON.stringify(results));
     //     const output = engine2.formatResults(results);
     //     // stringPromise =alfy_input
     //     return JSON.parse(output)[0].output
     // });
-    // console.log('sleep end');
-    // console.log('typeof', typeof stringPromise);
+    // debug('sleep end');
+    // debug('typeof', typeof stringPromise);
     // return stringPromise;
 
 }
 
 const fixedText = await fixText(alfy.input)
-console.log('fixText start');
+debug('fixText start');
 alfy.output([
     {
         title: fixedText,
-        subtitle: alfy.input
+        // subtitle: alfy.input
     }
 ]);
-console.log('fixText end');
+debug('fixText end');
 
 // fixText(alfy.input).then(function (fixedText) {
-//     console.log('fixText start');
+//     debug('fixText start');
 //     alfy.output([
 //         {
 //             title: fixedText,
 //             subtitle: alfy.input
 //         }
 //     ]);
-//     console.log('fixText end');
+//     debug('fixText end');
 // });
+
