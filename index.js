@@ -2,7 +2,10 @@
 const alfy = require('alfy');
 const TextFixEngine = require("textlint").TextFixEngine;
 
-async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World") {
+async function fixText(alfy_input) {
+    if (!alfy_input) {
+        alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
+    }
     const options = {
         fix: true,
         rules: ["no-todo"],
@@ -18,7 +21,7 @@ async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋
         return JSON.parse(output)[0].output
     });
     console.log('sleep end');
-    console.log('typeof',typeof stringPromise);
+    console.log('typeof', typeof stringPromise);
     return stringPromise;
 
 }
