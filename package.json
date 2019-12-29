@@ -1,7 +1,7 @@
 {
   "name": "alfred-bonk-textlint",
   "version": "0.0.34",
-  "description": "My sensational module",
+  "description": "Workflow to fix using textlink",
   "license": "MIT",
   "repository": "bonk/alfred-bonk-textlint",
   "author": {
