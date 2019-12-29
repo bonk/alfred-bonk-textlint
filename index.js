@@ -27,8 +27,7 @@ async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋
 fixText(alfy.input).then(function (fixedText) {
     alfy.output([
         {
-            title: 'Unicorn',
-            fixedText: fixedText,
+            title: fixedText,
             subtitle: alfy.input
         }
     ]);
