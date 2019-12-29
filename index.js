@@ -22,14 +22,20 @@ async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋
 
 }
 
-fixText(alfy.input).then(function (fixedText) {
-    console.log('fixText start');
-    alfy.output([
-        {
-            title: fixedText,
-            subtitle: alfy.input
-        }
-    ]);
-    console.log('fixText end');
-});
-
+// fixText(alfy.input).then(function (fixedText) {
+//     console.log('fixText start');
+//     alfy.output([
+//         {
+//             title: fixedText,
+//             subtitle: alfy.input
+//         }
+//     ]);
+//     console.log('fixText end');
+// });
+//
+alfy.output([
+    {
+        title: "hoge",
+        subtitle: alfy.input
+    }
+]);
