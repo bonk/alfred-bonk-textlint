@@ -12,7 +12,7 @@ alfy.meta = {
 };
 
 const debug = function () {
-    if (!alfy.meta.name) {
+    if (alfy.meta.name) {
         return () => {
         }
     }
