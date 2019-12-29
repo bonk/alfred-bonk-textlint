@@ -63,7 +63,7 @@ fixText(alfy.input).then(function (fixedText) {
         {
             title: fixedText,
             arg: fixedText,
-            subtitle: alfy.input,
+            subtitle: "from:" + alfy.input,
         }
     ]);
     debug('fixText end');
