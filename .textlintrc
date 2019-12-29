@@ -184,7 +184,7 @@
       // 末尾に絵文字を置くことを許可するか
       "allowEmojiAtEnd": true,
       // 句点で終わって無い場合に`periodMark`を--fix時に追加するかどうか
-      "forceAppendPeriod": false
+      "forceAppendPeriod": true
     },
     "ja-no-redundant-expression": true,
     "ja-no-weak-phrase": true,
