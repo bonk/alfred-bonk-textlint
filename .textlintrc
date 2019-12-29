@@ -1,99 +1,121 @@
 {
-  "filters": {},
+  "filters": {
+    "whitelist": {
+      // HugoのFront MatterとShort Codeを無視する
+      "allow": [
+        "/^{{％[\\s\\S]*?％}}/m"
+      ]
+    }
+  },
   "rules": {
-    // それぞれのルールのデフォルト値
-    "preset-japanese": {
-      // https://github.com/textlint-ja/textlint-rule-max-ten
-      // 一文で使える"、"の数
-      "max-ten": {
-        "max": 3
+    // 技術文書向けの textlint ルールプリセット
+    "preset-ja-technical-writing": {
+      // 1文の長さ
+      "sentence-length": {
+        max: 150
       },
-      // https://github.com/takahashim/textlint-rule-no-doubled-conjunctive-particle-ga
-      // 逆接の接続助詞「が」が、同一文中に複数回出現していないかどうか
-      // e.g.) 今日は早朝から出発したが、定刻には間に合わなかったが、無事会場に到着した。
-      "no-doubled-conjunctive-particle-ga": true,
-      // https://github.com/takahashim/textlint-rule-no-doubled-conjunction
-      // 同じ接続詞が連続して出現していないかどうか
-      "no-doubled-conjunction": true,
-      // https://github.com/textlint-ja/textlint-rule-no-double-negative-ja
-      // 二重否定の検出
+      // 1文中のカンマ
+      "max-comma": {
+        max: 6
+      },
+      // 1文中の読点
+      "max-ten": {
+        max: 3
+      },
+      // 連続できる最大の漢字長 : 固有名詞は allow オプションに記述して回避できる
+      "max-kanji-continuous-len": {
+        max: 5,
+        allow: [
+          "証明書生成時",
+          "建設的相互作用",
+          "開発環境構築",
+          "人類史上最高"
+        ]
+      },
+      // 「ですます調」、「である調」を統一する
+      "no-mix-dearu-desumasu": {
+        // 見出しは自動
+        "preferInHeader": "",
+        // 本文はですます調
+        "preferInBody": "ですます",
+        // 箇条書きはである調
+        "preferInList": "である",
+        // 文末以外のチェックをしない
+        "strict": false
+      },
+      "ja-no-mixed-period": {
+        // 文末の句点記号に「。」を使う
+        "periodMark": "。"
+      },
+      // 二重否定は使用しない
       "no-double-negative-ja": true,
-      // https://github.com/textlint-ja/textlint-rule-no-doubled-joshi
-      // 二重助詞の検出
-      // 連続して同じ助詞が出た場合のみを検出
+      // ら抜き言葉を使用しない
+      "no-dropping-the-ra": true,
+      // 逆接の接続助詞「が」を連続して使用しない
+      "no-doubled-conjunctive-particle-ga": true,
+      // 同じ接続詞を連続して使用しない
+      "no-doubled-conjunction": true,
+      // 同じ助詞を連続して使用しない
       "no-doubled-joshi": {
         "min_interval": 1
       },
-      // https://github.com/azu/textlint-rule-sentence-length
-      // 一文の最大の長さ
-      "sentence-length": {
-        "max": 100
-      },
-      // https://github.com/textlint-ja/textlint-rule-no-dropping-the-ra
-      // ら抜き言葉を使用しない
-      "no-dropping-the-ra": true,
-      // https://github.com/azu/textlint-rule-no-mix-dearu-desumasu
-      // 文の敬体(ですます調)、常体(である調)のチェック
-      "no-mix-dearu-desumasu": true,
-      // https://github.com/azu/textlint-rule-no-nfd
-      // ホ゜ケット エンシ゛ン
-      // のような、Mac OS XでPDFやFinderからのコピペで発生する濁点のチェック
+      // UTF8-MAC 濁点を使用しない
       "no-nfd": true,
-      // https://github.com/textlint-rule/textlint-rule-no-invalid-control-character
-      // 制御文字の検出
-      "no-invalid-control-character": true
+      // 感嘆符「!！?？」を使用を禁止する
+      "no-exclamation-question-mark": false,
+      // 半角カナを使用しない
+      "no-hankaku-kana": true,
+      // 弱い日本語表現の利用を使用しない
+      "ja-no-weak-phrase": true,
+      // 同一の単語を間違えて連続しているのをチェックする
+      "ja-no-successive-word": true,
+      // よくある日本語の誤用をチェックする
+      "ja-no-abusage": true
     },
-    "preset-jtf-style": {
-      "2.1.2.漢字": true,
-      "2.1.5.カタカナ": true,
-      "2.1.6.カタカナの長音": true,
-      "2.2.1.ひらがなと漢字の使い分け": true
+    // 日本語周りにおけるスペースの有無を決定する textlint ルールプリセット
+    "preset-ja-spacing": {
+      // カタカナ語間は中黒または半角スペースを用いて区切る
+      "ja-nakaguro-or-halfwidth-space-between-katakana": true,
+      // かっこの外側、内側ともにスペースを入れない
+      "ja-no-space-around-parentheses": true,
+      // 全角文字どうしの間にスペースを入れない
+      "ja-no-space-between-full-width": true,
+      // 半角文字と全角文字の間にスペースを入れるかどうか
+      "ja-space-between-half-and-full-width": {
+        "space": "never"
+      },
+      // 文末に感嘆符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入する
+      "ja-space-after-exclamation": true,
+      // 文末に疑問符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入する
+      "ja-space-after-question": true,
+      // インラインコードの前後が日本語である場合に半角スペースを入れるか
+      "ja-space-around-code": false
     },
-    "@textlint-ja/no-insert-dropping-sa": true,
-    "first-sentence-length": true,
+    // サ抜き、サ入れ表現の誤用
+    "@textlint-ja/textlint-rule-no-insert-dropping-sa": true,
+    // 漢字よりもひらがなで表記したほうが読みやすい副詞
     "ja-hiragana-fukushi": true,
+    // 漢字よりもひらがなで表記したほうが読みやすい補助動詞を指摘する
     "ja-hiragana-hojodoushi": true,
-    "ja-hiragana-keishikimeishi": true,
-    "ja-no-abusage": true,
-    "ja-no-mixed-period": {
-      // 優先する句点文字
-      "periodMark": "。",
-      // 句点文字として許可する文字列の配列
-      "allowPeriodMarks": [
-        '}',
-        '笑'
-      ],
-      // 末尾に絵文字を置くことを許可するか
-      "allowEmojiAtEnd": true,
-      // 句点で終わって無い場合に`periodMark`を--fix時に追加するかどうか
-      "forceAppendPeriod": false
-    },
+    // 冗長な表現を禁止する
     "ja-no-redundant-expression": true,
-    "ja-no-weak-phrase": true,
+    // 不自然なアルファベットを検知する
     "ja-unnatural-alphabet": true,
-    "max-appearence-count-of-words": true,
-    "max-kanji-continuous-len": true,
-    "max-kanji-continuous-len": {
-      max: 5,
-      allow: [
-        "無犯罪証明書",
-        "専門資格証明書",
-        "実務経験証明書",
-        "犯罪経歴証明書"
-      ]
+    // 常用漢字を使っているか
+    "joyo-kanji": false,
+    // 連用中止法を検知する
+    "no-renyo-chushi": true,
+    // 全角文字と半角英字の間に半角スペース、ただし次の全角文字 [、。「 」（）｛｝【】『』] の前後には不要
+    "one-white-space-between-zenkaku-and-hankaku-eiji": false,
+    // リンク切れ検出
+    "no-dead-link": {
+      "checkRelative": true,
+      "baseURI": null,
+      "ignore": ["http://localhost*"],
+      "preferGET": [],
+      "ignoreRedirects": false
     },
-    "max-length-of-title": true,
-    "max-ten": true,
-    "no-double-negative-ja": true,
-    "no-doubled-conjunction": true,
-    "no-doubled-conjunctive-particle-ga": true,
-    "no-doubled-joshi": true,
-    "no-dropping-the-ra": true,
-    "no-hankaku-kana": true,
-    "no-mix-dearu-desumasu": true,
-    "no-mixed-zenkaku-and-hankaku-alphabet": true,
-    "no-todo": true,
-    "prefer-tari-tari": true,
-    "sentence-length": true
+    // Tech Wordのスペルチェック
+    "spellcheck-tech-word": true
   }
 }
