@@ -1,4 +1,4 @@
-# alfred-bonk-test [![Build Status](https://travis-ci.org/bonk/alfred-bonk-test.svg?branch=master)](https://travis-ci.org/bonk/alfred-bonk-test)
+# alfred-bonk-textlint [![Build Status](https://travis-ci.org/bonk/alfred-bonk-textlint.svg?branch=master)](https://travis-ci.org/bonk/alfred-bonk-textlint)
 
 > My sensational module
 
@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --global alfred-bonk-test
+$ npm install --global alfred-bonk-textlint
 ```
 
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
@@ -14,19 +14,9 @@ $ npm install --global alfred-bonk-test
 
 ## Usage
 
-In Alfred, type `bonk-test`, <kbd>Enter</kbd>, and your query.
+In Alfred, type `bonk-textlint`, <kbd>Enter</kbd>, and your query.
 
 
-## License
+## memo
 
-MIT © [kawahara](http://bonk321.com)
-
-次のような表現を弱い表現として認識しています。
-
-基本,的、には、辞書ベースにすぎないので、特殊なアルゴリズムがあるわけではないです
-jquery hoge is me。
-jquery hoge is me。
-
-  hoge
-たろう
-げげお。
+`npm -g i alfred-bonk-textlint@$(jq .version package.json -r)`

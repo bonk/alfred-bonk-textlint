@@ -1,9 +1,9 @@
 {
-  "name": "alfred-bonk-test",
+  "name": "alfred-bonk-textlint",
   "version": "0.0.29",
   "description": "My sensational module",
   "license": "MIT",
-  "repository": "bonk/alfred-bonk-test",
+  "repository": "bonk/alfred-bonk-textlint",
   "author": {
     "name": "bonk",
     "email": "npm@bombom.sakura.ne.jp"

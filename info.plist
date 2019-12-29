@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.bonk321.bonk test</string>
+	<string>com.bonk321.bonk textlint</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>bonk test</string>
+	<string>bonk textlint</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -61,7 +61,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>bonk test</string>
+				<string>bonk textlint</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
