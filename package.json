@@ -13,6 +13,7 @@
   },
   "scripts": {
     "release": "npm version patch && npm publish ./",
+    "global-install": "npm -g i alfred-bonk-textlint@$(jq .version package.json -r)",
     "test": "xo && ava",
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup"
