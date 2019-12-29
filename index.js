@@ -13,23 +13,13 @@ alfy.meta = {
 
 const debug = (alfy.meta.name) ? () => {} : console.log;
 
-// const debug = function () {
-//     if (alfy.meta.name) {
-//         return () => {
-//         }
-//     }
-//     return console.log
-// };
-//
 async function fixText(alfy_input) {
-    // return "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
-    // return alfy_input
     if (!alfy_input) {
         alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
     }
     const options = {
         fix: true,
-        rules: ["no-todo"],
+        // rules: ["no-todo"],
         formatterName: "json"
     };
     const engine2 = new TextFixEngine(options);
@@ -46,17 +36,6 @@ async function fixText(alfy_input) {
     return stringPromise;
 
 }
-
-// const fixedText = await fixText(alfy.input)
-// debug('fixText start');
-// alfy.output([
-//     {
-//         title: fixedText,
-//         // subtitle: alfy.input
-//     }
-// ]);
-// debug('fixText end');
-
 fixText(alfy.input).then(function (fixedText) {
     debug('fixText start');
     alfy.output([
