@@ -11,9 +11,9 @@ function lintFile(filePath) {
 	const options = {
 		// load rules from [../rules]
 		rules: ["no-todo"],
-		formatterName: "pretty-error"
+		formatterName: "json"
 	};
-	const engine = new TextLintEngine(options);
+	// const engine = new TextLintEngine(options);
 	const engine2 = new TextFixEngine(options);
 
 	// return 'hoge';
@@ -56,7 +56,7 @@ function lintFile(filePath) {
 		// rules: ["no-todo"],
 		// config: `${__dirname}/.textlintrc`,
 		textlintrc: true,
-		formatterName: "pretty-error"
+		formatterName: "json"
 	}, [], searchTarget, ".txt").then(function(results) {
 		console.log(searchTarget);
 		console.log(results);
