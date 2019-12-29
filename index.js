@@ -39,7 +39,7 @@ function lintFile(filePath) {
 	// 	}
 	// });
 
-	const searchTarget = "私はは、.aBde 　 　ほんのり(優しく)チェッ,,,クできるtextlintプラグインを探さなければならない,家中天使嫌中,"
+	const searchTarget = "ほんのり(優しく)チェッ,,,クできるtextlintプラグインを探さなければならない,家中天使嫌中,"
 	// return engine2.onText(searchTarget);
 	return cli.executeWithOptions({
 		fix: true,
