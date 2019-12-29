@@ -7,8 +7,9 @@ const cli = require("textlint").cli;
 // const TextLintFixer = require("textlint/src/fixer/textlint-fixer").TextLintFixer
 
 const path = require("path");
-function lintFile(filePath) {
+async function lintFile() {
 	const options = {
+		fix: true,
 		// load rules from [../rules]
 		rules: ["no-todo"],
 		formatterName: "json"
@@ -39,75 +40,30 @@ function lintFile(filePath) {
 	// 	}
 	// });
 
-	const searchTarget = "ほんのり(優しく)チェッ,,,クできるtextlintプラグインを探さなければならない,家中天使嫌中,"
-	// return engine2.onText(searchTarget);
-	return cli.executeWithOptions({
-		fix: true,
-		debug: true,
-		// version: true,
-		// rules: {
-		// 	"ja-no-mixed-period": {
-		// 		"periodMark": "。",
-		// 		"allowPeriodMarks": ['}','笑'],
-		// 		"allowEmojiAtEnd": true,
-		// 		"forceAppendPeriod": true
-		// 	}
-		// },
-		// rules: ["no-todo"],
-		// config: `${__dirname}/.textlintrc`,
-		textlintrc: true,
-		formatterName: "json"
-	}, [], searchTarget, ".txt").then(function(results) {
-		console.log(searchTarget);
+	const searchTarget = "ほんのり(優しく)チェッ,,,クできるtextlintプラグインを探さなければならない,家中天使嫌中";
+	console.log('sleep start');
+	const stringPromise = await engine2.executeOnText(searchTarget, ".txt").then(function(results) {
 		console.log(results);
-		console.log(JSON.stringify(results));
-		// if (engine2.isErrorResults(results)) {
-		// 	const output = engine2.formatResults(results);
-			// printResults(output, cliOptions);
-			// console.log(output);
-		// } else {
-		// 	console.log("All Passed!");
-		// }
-		// const fixer = new TextLintFixer();
-		// return fixer.write(results).then(function () {
-		// 	return 0;
-		// });
+		const output = engine2.formatResults(results);
+		// stringPromise =searchTarget
+		return JSON.parse(output)[0].output
 	});
-	// return engine2.executeOnText(searchTarget).then(function(results) {
-	// 	console.log(JSON.stringify(results));
-	// 	if (engine2.isErrorResults(results)) {
-	// 		const output = engine2.formatResults(results);
-	// 		// printResults(output, cliOptions);
-	// 		console.log(output);
-	// 	} else {
-	// 		console.log("All Passed!");
-	// 	}
-	// 	const fixer = new TextLintFixer();
-	// 	return fixer.write(results).then(function () {
-	// 		return 0;
-	// 	});
-	// });
-
-	// const result = await engine.executeOnText(searchTarget).catch(e => {
-	// 	console.log('textlint error', e);
-	// 	return [{messages : []}];
-	// });
-	// result[0].messages.forEach(message => {
-	// 	item.typos[message.message] = message.fix || message.ruleId;
-	// });
+	console.log('sleep end');
+	return stringPromise;
 
 }
 
-let hoge = lintFile(`${__dirname}/README.md`);
+lintFile().then(function(hoge){
+	alfy.output([
+		{
+			title: 'Unicorn',
+			hoge: hoge,
+			subtitle: alfy.input
+		}
+	]);
+});
 // let hoge = lintFile(`${__dirname}/README.md`).catch(function(error) {
 // 	console.error(error);
 // 	process.exit(1);
 // });
 
-alfy.output([
-	{
-		title: 'Unicorn',
-		hoge: hoge,
-		subtitle: alfy.input
-	}
-]);
