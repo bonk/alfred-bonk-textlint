@@ -22,28 +22,28 @@ const debug = (alfy.meta.name) ? () => {} : console.log;
 // };
 //
 async function fixText(alfy_input) {
-    return "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
+    // return "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
     // return alfy_input
-    // if (!alfy_input) {
-    //     alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
-    // }
-    // const options = {
-    //     fix: true,
-    //     rules: ["no-todo"],
-    //     formatterName: "json"
-    // };
-    // const engine2 = new TextFixEngine(options);
-    // debug('sleep start');
-    // const stringPromise = await engine2.executeOnText(alfy_input, ".txt").then(function (results) {
-    //     debug('alfy_input:   ', alfy_input);
-    //     debug('results: ', JSON.stringify(results));
-    //     const output = engine2.formatResults(results);
-    //     // stringPromise =alfy_input
-    //     return JSON.parse(output)[0].output
-    // });
-    // debug('sleep end');
-    // debug('typeof', typeof stringPromise);
-    // return stringPromise;
+    if (!alfy_input) {
+        alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
+    }
+    const options = {
+        fix: true,
+        rules: ["no-todo"],
+        formatterName: "json"
+    };
+    const engine2 = new TextFixEngine(options);
+    debug('sleep start');
+    const stringPromise = await engine2.executeOnText(alfy_input, ".txt").then(function (results) {
+        debug('alfy_input:   ', alfy_input);
+        debug('results: ', JSON.stringify(results));
+        const output = engine2.formatResults(results);
+        // stringPromise =alfy_input
+        return JSON.parse(output)[0].output
+    });
+    debug('sleep end');
+    debug('typeof', typeof stringPromise);
+    return stringPromise;
 
 }
 
