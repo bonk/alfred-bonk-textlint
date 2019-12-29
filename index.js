@@ -27,13 +27,23 @@ async function fixText(alfy_input) {
 
 }
 
-fixText(alfy.input).then(function (fixedText) {
-    console.log('fixText start');
-    alfy.output([
-        {
-            title: fixedText,
-            subtitle: alfy.input
-        }
-    ]);
-    console.log('fixText end');
-});
+const fixedText = await fixText(alfy.input)
+console.log('fixText start');
+alfy.output([
+    {
+        title: fixedText,
+        subtitle: alfy.input
+    }
+]);
+console.log('fixText end');
+
+// fixText(alfy.input).then(function (fixedText) {
+//     console.log('fixText start');
+//     alfy.output([
+//         {
+//             title: fixedText,
+//             subtitle: alfy.input
+//         }
+//     ]);
+//     console.log('fixText end');
+// });
