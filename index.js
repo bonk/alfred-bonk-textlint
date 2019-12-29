@@ -22,7 +22,8 @@ const debug = (alfy.meta.name) ? () => {} : console.log;
 // };
 //
 async function fixText(alfy_input) {
-    return alfy_input
+    return "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
+    // return alfy_input
     // if (!alfy_input) {
     //     alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋, 哨, 噌, 吊, 呆World"
     // }
