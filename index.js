@@ -33,9 +33,15 @@ async function fixText(alfy_input = "こんにちは嘘, 噂, 叶, 噛, 叩, 喋
 //     console.log('fixText end');
 // });
 //
+// (async function() {
+//     let hoge = await fixText(alfy.input)
+// })();
+
 alfy.output([
     {
-        title: "hoge",
+        title: (async function() {
+            return await fixText(alfy.input)
+        })(),
         subtitle: alfy.input
     }
 ]);
